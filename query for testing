@@ -1,0 +1,26 @@
+Sr. No.	Query
+1	/* User-Agent Report */
+
+SELECT distinct cs(User-Agent), count(*) as hits,sc-status as Status, cs-uri-stem as Protocol
+FROM '[LOGFILEPATH]' 
+GROUP BY cs(user-agent),Status, Protocol
+ORDER BY hits DESC
+2	/* User-Agent Report */
+
+SELECT distinct cs(User-Agent), count(*) as hits,sc-status as Status, cs-uri-stem as Protocol
+FROM '[LOGFILEPATH]' 
+WHERE cs-username LIKE '%manish1.patel%'
+GROUP BY cs(user-agent),Status, Protocol
+ORDER BY hits DESC
+3	/* New Query */
+SELECT distinct cs-username AS UserID, cs(User-Agent), count(*) as hits,sc-status as Status, cs-uri-stem as Protocol, c-ip AS CLIENT
+FROM '[LOGFILEPATH]' 
+WHERE c-ip LIKE '%10.50.110.132%'
+GROUP BY UserID,cs(user-agent),Status, Protocol, CLIENT
+ORDER BY hits DESC
+4	/* User-Agent Report */
+
+SELECT distinct cs(User-Agent),cs-username AS UserID, sc-status as Status, cs-uri-stem as Protocol, c-ip AS CLIENT
+FROM '[LOGFILEPATH]' 
+WHERE cs(User-Agent) LIKE '%MAC%'
+GROUP BY cs(user-agent),UserID, Status, Protocol, CLIENT
