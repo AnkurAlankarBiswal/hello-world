@@ -1,0 +1,51 @@
+Python Virtual Environments with Anaconda Distribution:-
+Create new environment:
+With default python version:
+	conda create -n yourenvname
+With specific python version:
+	conda create -n yourenvname python=x.x
+With specific python version and 3rd party python library:
+	conda create -n yourenvname python=x.x packagename
+Activate environment:
+Windows:
+	activate yourenvname
+Linux:
+	source activate yourenvname
+Deactivate environment:
+Windows:
+	deactivate
+Linux:
+	source deactivate
+check list of environments:
+	conda info --envs
+Install 3rd party packages:
+	conda install packagename
+if package is not found check in google for other channels
+	conda install -c conda-forge opencv=3.2.0
+Deploy in other system or production system:
+a) Activate the environment in development system and execute below command
+	conda env export > environment.yml
+it will create a environment.yml file in current folder
+b) Copy the environment.yml in Production system and go to respective folder and execute below
+	conda env create -f environment.yml
+Remove the environment
+	conda remove --name yourenvname --all
+If your machine is under proxy use below:
+Setup proxy:
+Linux:
+a) Open terminal
+b) sudo gedit ~/.bashrc
+c) add below line in bashrc file
+export https_proxy=”http://username:password@proxyurl:portnumber”
+d) Close terminal
+Windows:
+a) Open command line
+b) Execute below command
+set https_proxy=http://username:password@proxyurl:portnumber
+If you logged in Non-Admin this will work until closed the command line
+if any special characters are in password should be converted to hexadecimal
+ex:
+@ ->%40
+# ->%23
+$ ->%24
+Ref: http://www.asciitohex.com/
