@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onblur="myFunction()" id="txt1">
+<input type="text" onblur="myFunction()" id="txt2">
+<input type="text" id="txt3">
+
+<script>
+function myFunction() {
+
+    var txt1=document.getElementById("txt1").value;
+    var txt2=document.getElementById("txt2").value;
+
+ document.getElementById("txt3").value = parseInt(txt1)+parseInt(txt2);
+    
+}
+</script>
+
+</body>
+</html>
