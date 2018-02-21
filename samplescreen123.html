@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<body>
+
+<h3>Strain Information</h3>
+
+<div>
+  <form action = "http://localhost:5000/strain" method = "POST">
+    <label for="Date">Date</label>
+	<input type="date" name="testdate" max="2018-08-19"><br><br>
+
+	<label for="lname">Sreain Name</label>
+    <select id="strainname" name="strainname">
+    <option value="RIL-1211">RIL-1211</option>
+    </select>	
+	
+	<label for="fname">Pond Name</label>
+	<select id="pname" name="pname">
+    <option value="Z01">Z01</option>
+	<option value="Z02">Z02</option>
+	<option value="Z03">Z03</option>
+	<option value="Y02">Y02</option>
+	<option value="Y03">Y03</option>
+	<option value="Y04">Y04</option>
+	<option value="Y05">Y05</option>
+	<option value="Y06">Y06</option>
+    </select>
+	
+	<label for="fname">OD at 17:30hrs</label>
+    <input type="text" id="od750" name="od750" placeholder="OD at 17:30hrs..">
+	
+	<label for="fname">Set point OD</label>
+    <input type="text" id="odsetpoint" name="odsetpoint" placeholder="Set point OD..">
+	
+	<label for="fname">OD at 9:30h</label>
+    <input type="text" id="odat0930" name="odat0930" placeholder="OD at 9:30h..">
+
+	<label for="fname">Evaporation loss/d (cm)</label>
+    <input type="text" id="Evaporation" name="Evaporation" placeholder="Evaporation loss..">	
+		
+	<label for="fname">Salinity</label>
+    <input type="text" id="salinity" name="salinity" placeholder="Salinity..">
+	
+	<label for="fname">Turbidity</label>
+    <input type="text" id="turbidity" name="turbidity" placeholder="Turbidity..">
+	
+	<label for="fname">Harvest volume</label>
+    <input type="text" id="hvolume" name="hvolume" placeholder="Your Harvest volume..">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
