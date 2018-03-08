@@ -1,0 +1,96 @@
+<html>
+<head>
+<style>
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    max-height: 23%;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+.imgDiv {
+	display: inline-block;
+}
+</style>
+<script>
+function doSomething()
+{
+
+var image  = document.getElementById("imageValue").value;
+if(image == "img_forest") {
+	document.getElementById("img1").src ="C:/Users/Ankur/Desktop/img_forest.jpg";
+	document.getElementById("img2").src ="C:/Users/Ankur/Desktop/img_fjords.jpg";
+	document.getElementById("img3").src ="C:/Users/Ankur/Desktop/img_lights.jpg";
+}
+else if(image == "img_fjords") {
+	document.getElementById("img2").src ="C:/Users/Ankur/Desktop/img_forest.jpg";
+	document.getElementById("img3").src ="C:/Users/Ankur/Desktop/img_fjords.jpg";
+	document.getElementById("img1").src ="C:/Users/Ankur/Desktop/img_lights.jpg";
+}
+else{
+    document.getElementById("img2").src ="";
+	document.getElementById("img3").src ="";
+	document.getElementById("img1").src ="";
+}
+
+
+}
+
+</script>
+</head>
+<body>
+
+    
+<div class="imgDiv">
+<select id="imageValue" name="country" onchange="if (this.selectedIndex) doSomething();">
+	<option value="">--SELECT--</option>
+      <option value="img_fjords">img_fjords</option>
+      <option value="img_forest">img_forest</option>
+      <option value="img_lights">img_lights</option>
+	  <option value="img_mountains">img_mountains</option>
+      <option value="data intake">data intake</option>
+    </select>
+	<div>
+		<div class="gallery">
+		  <a target="_blank" href="fjords.jpg">
+			<img id="img1" src="" alt="Fjords" width="300" height="200">
+		  </a>
+		  <!--<div class="desc">Add a description of the image here</div>-->
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="forest.jpg">
+			<img id="img2" src="" alt="Forest" width="300" height="200">
+		  </a>
+		  <!--<div class="desc">Add a description of the image here</div>-->
+		</div>
+
+		<div class="gallery">
+		  <a target="_blank" href="forest.jpg">
+			<img id="img3" src="" alt="Forest" width="300" height="200">
+		  </a>
+		  <!--<div class="desc">Add a description of the image here</div>-->
+		</div>
+	</div>
+	<div>
+	<textarea> </textarea>
+	</div>
+</div>
+
+
+
+</body>
+</html>
