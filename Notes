@@ -2,3 +2,11 @@ http://bigdata-madesimple.com/contributers/manu-jeevan/
 
 
 https://blogs.msdn.microsoft.com/buckwoody/category/devops-for-data-science/
+
+set @row := 1;
+select a.*,case when a.pond = b.pond then @row else (@row := @row + 1) end as grpkey
+from strain a join strain b
+on a.id = b.id+1;
+
+
+				
