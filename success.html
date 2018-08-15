@@ -1,0 +1,32 @@
+<html>
+   <body>
+   
+
+      
+      <form action = "http://localhost:5000/login" method = "post">
+         <p>Enter Name:</p>
+         <p><input type = "text" name = "nm" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+         
+        <table border = 1 id = "table1">
+         <thead>
+            <td>ID</td>
+            <td>NAME</td>
+         </thead>
+         
+            <tr>
+               <td>{{data[0][0]}}</td>
+               <td>{{data[0][1]}}</td>
+
+            </tr>
+            <tr>
+               <td>{{data[1][0]}}</td>
+               <td>{{data[1][1]}}</td>
+            </tr>
+      </table>
+      </form>
+      <form action = "http://localhost:5000/search" method = "post">
+      <p><input type = "submit" value = "search" /></p>
+      </form>
+   </body>
+</html>
